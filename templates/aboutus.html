@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            background-image: url('https://i.postimg.cc/3rS56BWs/11.jpg');
+            margin: 0;
+            padding: 0;
+            height: calc(100vh); /* Move content up by 20px */
+            background-size: cover;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .main{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction:column;
+        }
+        
+        .container {
+            background-color: #f7efe3;
+            padding: 50px;
+            border-radius: 30px;
+            box-shadow: 0 0 10px #97734f61;
+            text-align: center;
+            max-width:400px;
+            margin:30px;
+        }
+        
+        .container h1 {
+            color: #8b6239;
+            margin-bottom: 30px;
+        }
+        
+        .container p {
+            color: #000;
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .container i{
+            color:#8b6239;
+            padding-right:10px;
+        }
+        
+        @media (max-width: 568px) {
+            .container {
+                padding: 30px;
+            }
+        }
+        .btnn i {
+            position: relative;
+            left: 16px;
+        }
+        .btnn {
+            font-size: 15px;
+            display: inline-block;
+            padding: 10px 30px;
+            margin-top: 10px; /* Adjust margin-top as needed */
+            background-color: #8b6239;
+            color: white;
+            text-decoration: none;
+            border-radius: 40px;
+            border: 1px solid #8b6239;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.276);
+        }
+        .btnn:hover {
+            background-color:#816345;
+            color: white;
+        }
+        .header {
+            display: flex;
+            margin-bottom: 30px;
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #8b6239;
+        }
+        .header a {
+            padding-top:5px;
+            text-decoration: none;
+            color: #fff5ee;
+            font-weight: bold;
+            font-size: 30px;
+        }
+        .header .logo {
+            padding: 10px;
+        }
+    </style>
+
+</head>
+<body>
+     <!-- header -->
+   <div class="headingsec">
+    <header class="header">
+        <img src="https://i.postimg.cc/zGd75hDL/download-1-removebg-preview.png" width="35px" height="25px" class="logo">
+        <a href="/welcome" class="homelink">TASKIFY</a>
+    </header>
+</div>
+
+ <div class="main">
+    <div class="container">
+        <h1>About Us</h1>
+        <p>Taskify is dedicated to helping you create, modify, delete, and organize your tasks efficiently. Our goal is to improve productivity and efficiency, ensuring you achieve your dreams and goals.</p>
+        <p><i class="fas fa-envelope icon"></i>Email: taskify@gmail.com</p>
+        <p><i class="fas fa-phone-alt icon"></i>Phone: 9889880909</p>
+    </div>
+    <a href="/welcome" class="btnn">Back to Dashboard <i class="fa-solid fa-circle-chevron-left"></i></a>
+</div>
+</body>
+</html>

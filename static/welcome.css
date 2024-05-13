@@ -1,0 +1,238 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-image: url('https://i.postimg.cc/3rS56BWs/11.jpg');
+    background-size: cover;
+    font-family: 'Times New Roman', Times, serif;
+    height: 100vh;
+    text-align: center;
+    color: #7e5f41;
+}
+#welcome-message{
+  font-weight:normal;
+}
+/* header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.headingsec {
+    background-color: #8b6239;
+}
+
+header h1 {
+    font-size: 30px;
+    color: #fff5ee;
+    padding-bottom: 1px;
+}
+
+.header a {
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+    margin-left: 30px;
+}
+
+.header .logo {
+    padding: 10px;
+}
+
+.header-icons {
+    margin-left: auto; /* Push the icons to the right */
+}
+
+
+/* body */
+.boxes{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 26px;
+    gap:10px;
+    margin-top: 120px;
+}
+.box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 30px;
+    width: 170px;
+    height: 150px;
+    padding-top: 20px;
+    background-color: #f7efe3;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.box a {
+    font-size: 15px;
+    display: inline-block;
+    padding: 10px 30px;
+    margin-top: 10px; /* Adjust margin-top as needed */
+    color: white;
+    text-decoration: none;
+    border-radius: 40px;
+    transition: background-color 0.3s ease;
+}
+
+.imgic{
+    display: block;
+    margin: auto;
+    width:100px;
+    height: 100px;
+}
+.box:nth-child(3) .imgic {
+    margin-top: 60px; /* Add margin-top to move the image down */
+    margin-bottom: 0px;
+    margin-left: 25px;
+}
+.box:nth-child(3) a {
+    position: relative;
+    top:0px;
+    bottom: 20px;
+}
+.box:nth-child(2) form {
+    margin-top: 20px; /* Add margin-top to move the image down */
+}
+.box:nth-child(2) .imgic {
+    margin-top: 20px; /* Add margin-top to move the image down */
+    margin-bottom: 0px;
+}
+.box:nth-child(4) .imgic {
+    margin-top: 20px; /* Add margin-top to move the image down */
+    margin-bottom: 0px;
+}
+.box:nth-child(4) a {
+    margin-top: 7px; /* Add margin-top to move the image down */
+}
+
+input {
+    display: inline-block;
+    padding: 10px 25px;
+    margin-top: 10px; /* Adjust margin-top as needed */
+    background-color: #b68f69;
+    color: white;
+    border-radius: 40px;
+    transition: background-color 0.3s ease;
+    font-size: 20px; /* Match the font size */
+    font-size: 15px;
+    border: wheat 1px solid;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+main {
+    flex: 1;
+}
+
+/* footer */
+.footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0vh;
+    left: 0;
+    background-color: #97734f;
+    color: #fff5ee;
+    padding: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 50px;
+}
+.footer h3{
+    font-size: 30px;
+}
+.footer p{
+    font-size: 17px;
+}
+
+
+/* For screens smaller than 768px (tablets and mobile devices) */
+@media (max-width: 847px) {
+    .boxes {
+        flex-wrap: wrap;
+        padding: 10px; /* Allow boxes to wrap to the next line */
+        margin-top: 60px;
+    }
+    .header{
+        margin-bottom: 20px;
+    }
+    .box {
+        width: 30%; /* Make each box take full width on smaller screens */
+        margin-bottom: 20px; /* Add some space between the boxes */
+    }
+}
+
+/* Adjustments for larger screens */
+@media (min-width: 768px) {
+    .boxes {
+        justify-content: space-evenly; /* Keep the space between boxes on larger screens */
+    }
+    .box {
+        width: 170px; /* Restore the original width for larger screens */
+        margin-bottom: 0; /* Remove the bottom margin on larger screens */
+    }
+}
+
+
+@media (max-width: 553px) {
+    h1{
+        font-size: 20px;
+    }
+    .boxes {
+        padding: 10px;
+        margin: 0;
+        margin-top: 70px;
+    }
+    input {
+        padding: 8px 12px;
+    }
+    .box a {
+        font-size: 15px;
+        padding: 8px 20px;
+        margin-top: 10px; /* Adjust margin-top as needed */
+    }
+    header h1{
+        font-size: 25px;
+    }
+    .header a{
+        padding-left: 5px;
+        font-size: 17px;
+        margin-left: 7px;
+        font-size: 17px;
+    }
+    .footer{
+        gap:10px;
+    }
+}
+
+@media (max-width: 660px) {
+    .footer h3{
+        font-size: 20px;
+    }
+    .footer p{
+        font-size: 15px;
+    }
+    .footer .right{
+        padding-right: 10px;
+    }
+}
+
+/* Brown button styles */
+.btn-info {
+    background-color: #8B4513; /* Brown background for Completed Tasks */
+}
+.btn-warning {
+    background-color: #A0522D; /* Darker brown background for Pending Tasks */
+}
+.btn-success {
+    background-color: #c06a2d; /* Brownish orange background for Date Wise Tasks */
+}
+.btn-primary {
+    background-color: #CD853F; /* Lighter brown background for Total Tasks */
+}
+
+.btn:hover {
+    opacity: 0.8; /* Reduce opacity on hover for a subtle effect */
+}

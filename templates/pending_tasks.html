@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pending Tasks</title>
+    <link rel="stylesheet" href="static/tasks.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        table th, td {
+            border: 1px solid #b9926b; /* Dark brown border */
+            padding: 16px;
+            text-align: center;
+        }
+        .header a {
+            padding-top:5px;
+        }
+    </style>
+</head>
+<body>
+
+
+    <!-- header -->
+   <div class="headingsec">
+    <header class="header">
+        <img src="https://i.postimg.cc/zGd75hDL/download-1-removebg-preview.png" width="35px" height="25px" class="logo">
+        <a href="/welcome" class="homelink">TASKIFY</a>
+    </header>
+</div>
+
+ <div class="main">
+    <h1>Pending Tasks</h1>
+    <br>
+    <div class="page-container">
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Task ID</th>
+                <th>Task Name</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for task in pending_tasks %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ task.task_name }}</td>
+                <td>Date:{{ task.start_time.split('T')[0] }} <br>Time:{{ task.start_time.split('T')[1] }}</td>
+                <td>Date:{{ task.end_time.split('T')[0] }} <br>Time:{{ task.end_time.split('T')[1] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<br>
+<a href="/task_analysis" class="btnn">Back to Task Analysis <i class="fa-solid fa-circle-chevron-left"></i></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+body {
+    background-image: url('https://i.postimg.cc/3rS56BWs/11.jpg');
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: calc(100vh - 120px); /* Move content up by 20px */
+    background-size: cover;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+h2 {
+    margin-top: 60px;
+    font-size: 110px;
+    color: #8b6239;
+    margin-bottom: 0; 
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.356);
+}
+
+h4 {
+    font-size: 25px;
+    color: #764f27;
+    margin-top: 0;
+    text-align: center; 
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.356);
+
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: #8b6239;
+    color: white;
+    text-decoration: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.356);
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #815e3c;
+}
+
+.B {
+    display: flex;
+    justify-content: center;
+    gap: 3px;
+    margin-top: 0px;
+}
+ 
+@media (max-width: 1234px) {
+    h2 {
+        font-size: 90px; /* Adjust font size for tablet */
+        color: #8b6239;
+    }
+    h4 {
+        font-size: 20px; /* Adjust font size for tablet */
+        color: #764f27;
+    }
+    .btn {
+        padding: 8px 24px; /* Adjust button padding for tablet */
+        margin: 5px;
+        background-color: #8b6239;
+    }
+    .B{
+        gap: 0px;
+    }
+    body {
+        min-height: 100vh;
+    }
+}
+
+@media (max-width: 568px) {
+    h2 {
+        font-size: 60px; /* Adjust font size for mobile */
+        color: #8b6239;
+    }
+
+    h4 {
+        font-size: 16px; /* Adjust font size for mobile */
+        margin-bottom: 10px;
+        color: #764f27;
+    }
+
+    .btn {
+        padding: 6px 20px; /* Adjust button padding for mobile */
+        background-color: #8b6239;
+
+    }
+    body {
+    background-image: url('https://i.postimg.cc/3rS56BWs/11.jpg');
+    }
+}

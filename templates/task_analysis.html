@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Analysis</title>
+    <link rel="stylesheet" href="static/task_analysis.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        .btnn {
+            font-size: 15px;
+            display: inline-block;
+            padding: 10px 30px;
+            margin-top: 10px; /* Adjust margin-top as needed */
+            background-color: #8b6239;
+            color: white;
+            text-decoration: none;
+            border-radius: 40px;
+            border: 1px solid #97734f;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.276);
+        }
+        .btnn:hover {
+            background-color:#816345;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+     <!-- header -->
+     <div class="headingsec">
+        <header class="header">
+            <img src="https://i.postimg.cc/zGd75hDL/download-1-removebg-preview.png" width="35px" height="25px" class="logo">
+            <a href="/welcome" class="homelink">TASKIFY</a>
+        </header>
+    </div>
+
+
+    <div class="main">
+    <div class="container">
+        <h1>Task Analysis</h1>
+        <a href="/completed-tasks" class="btn btn-info">Completed Tasks <i class="fa-solid fa-check"></i></a>
+        <br>
+        <a href="/pending-tasks" class="btn btn-warning">Pending Tasks <i class="fa-solid fa-clock"></i></a>
+        <br>
+        <a href="/total-tasks" class="btn btn-success">Total Tasks <i class="fa-solid fa-list"></i></a>
+        <br>
+        <a href="/date_wise_tasks" class="btn btn-primary">Date Wise Tasks <i class="fa-solid fa-calendar-days"></i></a>
+    </div>
+
+    <a href="/welcome" class="btnn">Back to Dashboard <i class="fa-solid fa-circle-chevron-left"></i></a>
+</div>
+</body>
+</html>

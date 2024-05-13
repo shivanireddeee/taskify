@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/* Global styles */
+body {
+    background-image: url('https://i.postimg.cc/3rS56BWs/11.jpg');
+    min-height: 500px;
+    background-size: cover;
+    font-family: 'Times New Roman', Times, serif;
+    min-height: 100vh;
+    color: #8b6239;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    align-items: center;
+}
+
+
+/* header */
+.header {
+    display: flex;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #8b6239;
+}
+.header a {
+    text-decoration: none;
+    color: #fff5ee;
+    font-weight: bold;
+    font-size: 30px;
+}
+.header .logo {
+    padding: 10px;
+}
+
+
+
+
+/* Header styles */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #8b6239; /* Dark brown text color */
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.page-container {
+    height: 60vh; /* Set a fixed height for the container, adjust as needed */
+    overflow: auto; /* Enable vertical scrolling for the container if necessary */
+    width: 80%;
+    border-radius: 35px; /* Adjust the radius as per your design */
+}
+
+/* Table styles */
+table {
+    font-family: 'Times New Roman', Times, serif;
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #ffeddbd4;
+    border-radius: 20px;
+    min-height: 400px;
+}
+
+table th, td {
+    border: 1px solid #b9926b; /* Dark brown border */
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #8b6239; /* Dark brown background for table headers */
+    color: white; /* White text color for table headers */
+}
+
+.btnn {
+    font-size: 15px;
+    display: inline-block;
+    padding: 10px 30px;
+    margin-top: 10px; /* Adjust margin-top as needed */
+    background-color: #8b6239;
+    color: white;
+    text-decoration: none;
+    border-radius: 40px;
+    border: 1px solid #8b6239;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.276);
+}
+.btnn:hover {
+    background-color:#816345;
+    color: white;
+}
+i {
+    position: relative;
+    left: 10px;
+}

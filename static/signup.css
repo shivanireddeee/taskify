@@ -1,0 +1,127 @@
+
+body {
+    background-image: url('https://i.postimg.cc/3rS56BWs/11.jpg');
+    margin: 0;
+    padding: 0;
+    height: calc(100vh - 10px); /* Move content up by 20px */
+    background-size: cover;
+}      
+.main{
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+form {
+    background-color: #f7efe3;
+    padding: 50px;
+    border-radius: 30px;
+    box-shadow: 0 0 10px #97734f61;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+        
+input[type="text"],
+input[type="password"],
+input[type="submit"] {
+    display: block;
+    margin: auto;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 35px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #8b6239;
+    color: white;
+    border: none;
+    padding: 8px 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 40px;
+}
+
+input[type="submit"]:hover {
+    background-color: #a57c52;
+}
+
+.alert {
+    margin-top: 10px;
+    color: red !important; 
+    font-size: 17px;
+}
+form h2 {
+    color: #9d7042;
+    margin-bottom: 30px; 
+}
+
+@media (max-width: 1234px) {
+    body {
+        min-height: 100vh;
+    }
+}
+  @media (max-width: 568px) {
+    form{
+        padding: 30px;
+        margin-top: 50px;
+    }
+    input[type="text"],
+    input[type="password"] {           
+            padding: 6.5px;
+            margin-bottom: 10px;
+        }
+    input[type="submit"] {
+        padding: 5px 20px;
+    }
+    body {
+        background-image: url('https://i.postimg.cc/3rS56BWs/11.jpg');
+    }
+}
+
+
+
+
+.input-field{
+    display: flex;
+    flex-direction:column;
+} .input{
+    height: 45px;
+    width: 87%;
+    border: none;
+    border-radius: 30px;
+    color: #a47c48;
+    font-size: 15px;
+    padding: 0 0 0 45px;
+    background: rgb(255, 251, 249);
+    outline: none;
+}
+i{
+    position: relative;
+    top: -40px;
+    left: 67px;
+    color: #a47c48;
+}
+::-webkit-input-placeholder{
+    color: #a47c48;
+}    
+   
+    
+
+/* header */
+.header {
+    display: flex;
+    margin-bottom: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #8b6239;
+}
+.header a {
+    text-decoration: none;
+    color: #fff5ee;
+    font-weight: bold;
+    font-size: 30px;
+}
+.header .logo {
+    padding: 10px;
+}

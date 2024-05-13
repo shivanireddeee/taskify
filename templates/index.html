@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taskify</title>
+    <link rel="stylesheet" href="static/index.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>TASKIFY</h2>
+        <h4>Manage your tasks with ease</h4>
+        <div class="B">
+            <a href="/signup" class="btn btn-secondary">Signup</a>
+            <br><br>
+            <a href="/login" class="btn btn-secondary">Login</a>
+        </div>
+    </div>
+    <br><br>
+    <!--<img src="https://i.postimg.cc/zGd75hDL/download-1-removebg-preview.png" width="250px" height="180px" class="logo">-->
+
+    <script>
+        function clearHistory() {
+            window.history.replaceState(null, null, window.location.href);
+        }
+        // Call the clearHistory function when the page is loaded
+        window.onload = clearHistory;
+    </script>
+</body>
+</html>
