@@ -8,19 +8,27 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
-   <!-- header -->
-<div class="headingsec">
-    <header class="header">
-        <img src="https://i.postimg.cc/zGd75hDL/download-1-removebg-preview.png" width="35px" height="25px" class="logo">
-        <h1 class="mainheading">TASKIFY</h1>
-        <div class="header-icons">
-            <a href="/usersettings"><i class="fa-solid fa-gear"></i></a>
-            <a href="/logout">Logout <i class="fa-solid fa-right-from-bracket"></i></a>
-        </div>
-    </header>
-</div>
+    <!-- header -->
+    <div class="headingsec">
+        <header class="header">
+            <img src="https://i.postimg.cc/zGd75hDL/download-1-removebg-preview.png" width="35px" height="25px" class="logo">
+            <h1 class="mainheading">TASKIFY</h1>
+            <div class="header-icons">
+                <a href="/usersettings"><i class="fa-solid fa-gear"></i></a>
+                <a href="/logout">Logout <i class="fa-solid fa-right-from-bracket"></i></a>
+            </div>
+        </header>
+    </div>
 
-<h1 id="welcome-message" class="w">Welcome!</h1>
+    
+    <!--<h1 id="welcome-message" class="w"></h1>-->
+    <h1 class="message">
+        {% if message %}
+            <p>{{ message }}</p>
+        {% else %}
+            <p>You have completed <strong>{{ percentc }}%</strong> of your tasks.</p>
+        {% endif %}
+    </h1>
      <!-- main body -->
      <div class="boxes">
         <div class="box">
@@ -47,13 +55,15 @@
             <br>
             <img class="imgic" src="https://i.postimg.cc/Bn6tJHGX/615075.png" alt="">
             <br>
-            <a href="/aboutus" class="btn btn-primary">About Us</a><br><br>
+            <a href="/aboutus" class="btn btn-primary">About</a><br><br>
          </div>
      </div>
 
 
-
-    
+    <br>
+    <a href="/pending" class="btn btn-warning"> 
+        <p class="pmsg">You still have <strong>{{ pending_tasks_count }}</strong> pending tasks <i class="fa-solid fa-clock"></i></p>
+    </a>
 
     <script>
         function viewTasks() {
@@ -62,44 +72,44 @@
         }
     </script>
     <!-- Add this script in your HTML template -->
-<script>
-    function logoutAndClearHistory() {
-        fetch('/logout', {
-            method: 'POST',  // Use POST method to trigger server-side logout
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ logout: true })
-        }).then(() => {
-            // Clear browser history
-            window.location.replace('/');  // Redirect to home page after logout
-            window.history.pushState(null, '', window.location.href);  // Clear history
-        }).catch(error => {
-            console.error('Error logging out:', error);
-        });
-    }
-</script>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        var currentDate = new Date();
-        var currentHour = currentDate.getHours();
-
-        var welcomeMessage = document.getElementById("welcome-message");
-
-        if (currentHour >= 4 && currentHour < 12) {
-            welcomeMessage.textContent = "Good Morning! Have a great day ahead!";
-        } else if (currentHour >= 12 && currentHour < 16) {
-            welcomeMessage.textContent = "Good Afternoon! It's the perfect time to recharge with a refreshing break.";
-        } else if (currentHour >= 16 && currentHour < 20) {
-            welcomeMessage.textContent = "Good Evening! Have a lovely evening!";
-        } else if (currentHour >= 20 || currentHour < 4) {
-            welcomeMessage.textContent = "Good Night! Have a peaceful sleep!";
-        } else {
-            welcomeMessage.textContent = "Your body needs rest!";
+    <script>
+        function logoutAndClearHistory() {
+            fetch('/logout', {
+                method: 'POST',  // Use POST method to trigger server-side logout
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ logout: true })
+            }).then(() => {
+                // Clear browser history
+                window.location.replace('/');  // Redirect to home page after logout
+                window.history.pushState(null, '', window.location.href);  // Clear history
+            }).catch(error => {
+                console.error('Error logging out:', error);
+            });
         }
-    });
-</script>
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var currentDate = new Date();
+            var currentHour = currentDate.getHours();
+
+            var welcomeMessage = document.getElementById("welcome-message");
+
+            if (currentHour >= 4 && currentHour < 12) {
+                welcomeMessage.textContent = "Good Morning! Have a great day ahead!";
+            } else if (currentHour >= 12 && currentHour < 16) {
+                welcomeMessage.textContent = "Good Afternoon! It's the perfect time to recharge with a refreshing break.";
+            } else if (currentHour >= 16 && currentHour < 20) {
+                welcomeMessage.textContent = "Good Evening! Have a lovely evening!";
+            } else if (currentHour >= 20 || currentHour < 4) {
+                welcomeMessage.textContent = "Good Night! Have a peaceful sleep!";
+            } else {
+                welcomeMessage.textContent = "Your body needs rest!";
+            }
+        });
+    </script>
 
 
 </body>

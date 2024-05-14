@@ -2,7 +2,6 @@ body {
     background-image: url('https://i.postimg.cc/3rS56BWs/11.jpg');
     margin: 0;
     padding: 0;
-    /* height: calc(100vh - 10px); Move content up by 20px */
     background-size: cover;
     min-height: 100vh;
 }      
@@ -12,8 +11,8 @@ body {
     flex-direction: column;
     align-items: center;
 }
-form {
-    margin-top: 50px;
+.updating {
+    margin-top: 30px;
     background-color: #f7efe3;
     padding: 35px;
     padding-bottom: 20px;
@@ -24,7 +23,20 @@ form {
     width: 25%;
     width: 350px;
 }
-        
+
+.btn-danger{
+    border-radius: 40px;
+    background-color: #8B4513; 
+    border: #8B4513 1px solid;
+    color: white;
+    padding: 8px 20px;
+}
+.btn-danger i{
+    position: relative;
+    left: 7px;
+}  
+
+  
 input[type="text"],
 input[type="password"],
 input[type="submit"] {
@@ -52,7 +64,6 @@ input[type="submit"]:hover {
 }
 
 .alert {
-    margin-top: 10px;
     color: red !important; 
     font-size: 17px;
 }
@@ -67,10 +78,10 @@ form h2 {
     }
 }
 @media (max-width: 568px) {
-    form{
+    .updating{
         padding: 20px;
         margin: 10px;
-        margin-top: 50px;
+        margin-top: 30px;
         width: 300px;
     }
     input[type="text"],
@@ -83,6 +94,7 @@ form h2 {
     }
     body {
         background-image: url('https://i.postimg.cc/3rS56BWs/11.jpg');
+        min-height: 97.5vh;
     }
 }
 
@@ -103,7 +115,7 @@ form h2 {
     background: rgb(255, 251, 249);
     outline: none;
 }
-i{
+.input-field i{
     position: relative;
     top: -40px;
     left: 97px;
@@ -111,8 +123,12 @@ i{
 }
 ::-webkit-input-placeholder{
     color: #a47c48;
-}    
-   
+} 
+.sbtn{
+    display: flex;
+    justify-content: space-evenly;
+}
+
     
 
 /* header */
@@ -158,6 +174,8 @@ i{
     top:0px;
     color:white;
 }
+
+
 .modal {
     display: none;
     position: fixed;
@@ -170,15 +188,11 @@ i{
     background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
     font-family: 'Times New Roman', Times, serif;
 }
-
 .modal-content {
     background-color: #f7efe3; /* Light brown modal background */
     margin: 10% auto;
-    border: 1px solid #b68f69; /* Dark brown border */
     width: 80%;
 }
-
-
 .modal-title{
     padding-top:20px;
     padding-left:20px;
@@ -186,7 +200,6 @@ i{
 .modal-body {
     padding: 20px;
 }
-
 .modal-footer {
     padding: 10px 0;
     text-align: center;
