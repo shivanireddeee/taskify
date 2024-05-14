@@ -21,9 +21,9 @@
     </div>
 
     
-    <!--<h1 id="welcome-message" class="w"></h1>-->
-    <h1 class="message">
-        <!--{% if message %}
+    <h1 id="welcome-message" class="w"></h1>
+    <!--<h1 class="message">
+        {% if message %}
             <p>{{ message }}</p>
         {% else %}
             <p><strong>{{ percentc }}</strong></p>
@@ -61,11 +61,11 @@
 
 
     <br>
-    <a href="/pending" class="btn btn-warning"> 
+    <!--<a href="/pending" class="btn btn-warning"> 
         <p class="pmsg">
-            <!--<strong>{{ pending_tasks_count }}</strong>-->
+            <strong>{{ pending_tasks_count }}</strong>
         </p>
-    </a>
+        </a>-->
 
     <script>
         function viewTasks() {
@@ -106,7 +106,7 @@
             } else if (currentHour >= 16 && currentHour < 20) {
                 welcomeMessage.textContent = "Good Evening! Have a lovely evening!";
             } else if (currentHour >= 20 || currentHour < 4) {
-                welcomeMessage.textContent = "Good Night! Have a peaceful sleep!";
+                welcomeMessage.textContent = "Good Evening! Have a lovely evening!";
             } else {
                 welcomeMessage.textContent = "Your body needs rest!";
             }
