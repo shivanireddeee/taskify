@@ -26,7 +26,7 @@
         {% if message %}
             <p>{{ message }}</p>
         {% else %}
-            <p>You have completed <strong>{{ percentc }}%</strong> of your tasks.</p>
+            <p><strong>{{ percentc }}</strong></p>
         {% endif %}
     </h1>
      <!-- main body -->
@@ -62,7 +62,7 @@
 
     <br>
     <a href="/pending" class="btn btn-warning"> 
-        <p class="pmsg">You still have <strong>{{ pending_tasks_count }}</strong> pending tasks <i class="fa-solid fa-clock"></i></p>
+        <p class="pmsg"><strong>{{ pending_tasks_count }}</strong><i class="fa-solid fa-clock"></i></p>
     </a>
 
     <script>
