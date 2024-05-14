@@ -377,7 +377,7 @@ def welcome():
     if is_authenticated():
         return render_template('welcome.html')
     else:
-        return redirect('/index')
+        return redirect('/')
 
 
 # @app.route('/welcome')
