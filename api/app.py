@@ -4,7 +4,7 @@ import os
 
 
 app = Flask(__name__)
-app.secret_key = os.urandom(32)
+#app.secret_key = os.urandom(32)
 
 # Initialize Supabase client
 SUPABASE_URL = os.getenv('SUPABASE_URL')
