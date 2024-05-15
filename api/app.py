@@ -1,10 +1,18 @@
 from flask import Flask, render_template, request, session, redirect,flash,jsonify, url_for
 from supabase import create_client
 import os
+from dotenv import load_dotenv
 
+
+# import secrets
+# secrets.token_hex(16)
+
+# Load environment variables from .env file
+load_dotenv()
 
 app = Flask(__name__)
-app.secret_key = os.urandom(32)
+# app.secret_key = os.urandom(36)
+app.secret_key ="sdfasd"
 
 # Initialize Supabase client
 SUPABASE_URL = os.getenv('SUPABASE_URL')
@@ -202,6 +210,14 @@ def pending_tasks():
     pending_tasks = response.data
     return render_template('pending_tasks.html', pending_tasks=pending_tasks)
 
+@app.route('/pending')
+@check_authentication
+def pending():
+    user_id = get_current_user_id()  # Assuming you have a function to get the current user's ID
+    response = supabase.table('tasks').select('*').eq('user_id', user_id).eq('task_status', 0).execute()
+    pending_tasks = response.data
+    return render_template('pending.html', pending_tasks=pending_tasks)
+
 @app.route('/task_analysis')
 @check_authentication
 def task_analysis():
@@ -228,13 +244,7 @@ def date_wise_tasks():
     
     return render_template('date_wise_tasks.html', tasks=tasks_sorted)
 
-# @app.route('/welcome')
-# def welcome():
-#     if 'user_id' in session:
-#         # User is logged in, render the welcome page
-#         return render_template('welcome.html')
-#     else:
-#         # User is not logged in, redirect to the login page
+
 @app.route('/usersettings')
 def user_settings():
     return render_template('usersettings.html')
@@ -292,63 +302,6 @@ def update_user():
     return render_template('usersettings.html')
 
 
-# @app.route('/update_user', methods=['POST'])
-# def update_user():
-#     if request.method == "POST":
-#         user_id = get_current_user_id()  # Assuming you have a function to get the current user's ID
-#         if user_id:       
-#             new_username = request.form['username']
-#             new_password = request.form['password']
-
-#             # Check if the new username already exists
-#             current_username = current_user[0]['username']
-#             if current_username!=new_username:
-#                 user_exists = supabase.from_('users').select('*').eq('username', new_username).execute().data
-#                 if user_exists:
-#                     flash('Username already taken!', 'error')
-#                     return redirect(url_for('user_settings'))
-
-#             # Get the current user's details
-#             current_user = supabase.from_('users').select('*').eq('id', user_id).execute().data
-#             current_username = current_user[0]['username']
-#             current_password = current_user[0]['password']
-
-#             # Check if username and password have changed
-#             username_changed = current_username != new_username
-#             password_changed = current_password != new_password
-
-#             # Update user details in the 'users' table
-#             update_data = {}
-#             if username_changed:
-#                 update_data['username'] = new_username
-#             if password_changed:
-#                 update_data['password'] = new_password
-
-#             if username_changed or password_changed:
-#                 supabase.from_('users').update(update_data).eq('id', user_id).execute()
-#                 if username_changed and password_changed:
-#                     flash('Username and password changed successfully!', 'info')
-#                 elif username_changed:
-#                     flash('Username changed successfully!', 'info')
-#                 else:
-#                     flash('Password changed successfully!', 'info')
-#                 return redirect(url_for('user_settings'))
-#             else:
-#                 flash('No changes made!', 'info')
-#                 return redirect(url_for('user_settings'))
-#         else:
-#             flash('User ID not found!', 'error')
-#             return redirect(url_for('user_settings'))
-#     return render_template('usersettings.html')
-
-
-# @app.route('/deletettask', methods=['POST'])
-# @check_authentication
-# def deletettask():
-#     task_id = request.form.get('deleteId')  # Get the task_id from the form
-#     if task_id:
-#         response = supabase.table('tasks').delete().eq('id', task_id).execute()
-#     return redirect('/tasks')
 
 @app.route('/usersettings')
 @check_authentication
@@ -372,12 +325,33 @@ def delete_user():
 def about_us():
     return render_template('aboutus.html')
 
+
+
 @app.route('/welcome')
 def welcome():
     if is_authenticated():
-        return render_template('welcome.html')
+        user_id = get_current_user_id()
+
+        response = supabase.table('tasks').select('id', count='exact').eq('user_id', user_id).eq('task_status', 0).execute()
+        pending_tasks_count = response.count
+        response_completed = supabase.table('tasks').select('id', count='exact').eq('user_id', user_id).eq('task_status', 1).execute()
+        completed_tasks_count = response_completed.count
+        response_total = supabase.table('tasks').select('id', count='exact').eq('user_id', user_id).execute()
+        total_tasks_count = response_total.count
+        if total_tasks_count == 0:
+            message = "You haven't created any tasks yet"
+        elif total_tasks_count == completed_tasks_count:
+            message = "Yay! You have completed all your tasks"
+        else:
+            message = None
+        
+        if total_tasks_count > 0:
+            percentc = round((completed_tasks_count / total_tasks_count) * 100)
+        else:
+            percentc = 0
+        return render_template('welcome.html',pending_tasks_count=pending_tasks_count, percentc=percentc, message=message)
     else:
-        return redirect('/')
+        return redirect('/index')
 
 
 # @app.route('/welcome')
