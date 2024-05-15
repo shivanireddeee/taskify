@@ -21,14 +21,16 @@
     </div>
 
     
-    <h1 id="welcome-message" class="w"></h1>
+    <div id="welcome-message" class="w">
+    </div>
     <!--<h1 class="message">
         {% if message %}
             <p>{{ message }}</p>
         {% else %}
-            <p><strong>{{ percentc }}</strong></p>
-        {% endif %}-->
-    </h1>
+            <p>You have completed <strong>{{ percentc }}%</strong> of your tasks.</p>
+        {% endif %}
+    </h1>-->
+    
      <!-- main body -->
      <div class="boxes">
         <div class="box">
@@ -62,10 +64,8 @@
 
     <br>
     <!--<a href="/pending" class="btn btn-warning"> 
-        <p class="pmsg">
-            <strong>{{ pending_tasks_count }}</strong>
-        </p>
-        </a>-->
+        <p class="pmsg">You still have <strong>{{ pending_tasks_count }}</strong> pending tasks <i class="fa-solid fa-clock"></i></p>
+    </a>-->
 
     <script>
         function viewTasks() {
@@ -100,15 +100,15 @@
             var welcomeMessage = document.getElementById("welcome-message");
 
             if (currentHour >= 4 && currentHour < 12) {
-                welcomeMessage.textContent = "Good Morning! Have a great day ahead!";
+                welcomeMessage.textContent = "Sunrise Slayers! First Things First! Focus on the most important tasks before distractions hit.";
             } else if (currentHour >= 12 && currentHour < 16) {
-                welcomeMessage.textContent = "Good Afternoon! It's the perfect time to recharge with a refreshing break.";
+                welcomeMessage.textContent = "Good Afternoon! Power Through It! You're halfway there! Keep the momentum going and check those tasks off.";
             } else if (currentHour >= 16 && currentHour < 20) {
-                welcomeMessage.textContent = "Good Evening! Have a lovely evening!";
+                welcomeMessage.textContent = "Home Stretch! Review your progress and see what else you can accomplish.";
             } else if (currentHour >= 20 || currentHour < 4) {
-                welcomeMessage.textContent = "Good Evening! Have a lovely evening!";
+                welcomeMessage.textContent = "Night Owls Unite! We're here for your late-night productivity bursts.";
             } else {
-                welcomeMessage.textContent = "Your body needs rest!";
+                welcomeMessage.textContent = "Time to drift off to dreamland.";
             }
         });
     </script>

@@ -46,6 +46,7 @@ form {
     padding-bottom: 20px;
     font-family: 'Times New Roman', Times, serif;
     color:#8b6239;
+    margin-top: 50px;
 }
 h1 {
     color: #8b6239;
@@ -104,6 +105,7 @@ input[type="submit"]:hover {
     border: 1px solid #8b6239;
     transition: background-color 0.3s ease;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.276);
+    width: 30%;
 }
 .btn:hover {
     background-color:#705131;
@@ -111,11 +113,16 @@ input[type="submit"]:hover {
 }
 i {
     position: relative;
-    left: 10px;
+    left: 6px;
 }
 
-@media (max-width: 553px) {
-
+@media (max-width: 400px) {
+    form{
+        width: 70%;
+        min-width: 270px;
+        padding: 30px;
+        margin-top: 50px;
+    }
 }
 
 

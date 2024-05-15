@@ -15,13 +15,14 @@ body {
     font-size: 20px;
     color: #7e5f41;
     background-color: #f7efe3;
-    padding: 15px 30px;
+    padding: 5px 30px;
     width: 20%;
     margin: auto;
     min-width: 200px;
-    border-radius: 15px;
+    border-radius: 5px;
     display: inline;
 }
+
 .pmsg{
     background-color: #f7efe3;
     padding: 15px 30px;
@@ -199,6 +200,11 @@ main {
         margin-bottom: 0; /* Remove the bottom margin on larger screens */
     }
 }
+@media (max-width: 717px) {
+    #welcome-message{
+        padding: 3px 20px;
+    }
+}
 
 
 @media (max-width: 553px) {
@@ -206,7 +212,7 @@ main {
         font-size: 20px;
     }
     #welcome-message{
-        padding: 10px 20px;
+        padding: 1.7px 20px;
         color: #7e5f41;
         font-weight: bold;
         font-size: 15px;
