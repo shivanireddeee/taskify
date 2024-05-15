@@ -5,14 +5,14 @@ from dotenv import load_dotenv
 
 
 # import secrets
-# secrets.token_hex(16)
+#secrets.token_hex(16)
 
 # Load environment variables from .env file
 load_dotenv()
 
 app = Flask(__name__)
-# app.secret_key = os.urandom(36)
-app.secret_key ="sdfasd"
+app.secret_key = os.urandom(36)
+
 
 # Initialize Supabase client
 SUPABASE_URL = os.getenv('SUPABASE_URL')
