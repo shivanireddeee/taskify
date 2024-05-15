@@ -330,26 +330,26 @@ def about_us():
 @app.route('/welcome')
 def welcome():
     if is_authenticated():
-        user_id = get_current_user_id()
+        # user_id = get_current_user_id()
 
-        response = supabase.table('tasks').select('id', count='exact').eq('user_id', user_id).eq('task_status', 0).execute()
-        pending_tasks_count = response.count
-        response_completed = supabase.table('tasks').select('id', count='exact').eq('user_id', user_id).eq('task_status', 1).execute()
-        completed_tasks_count = response_completed.count
-        response_total = supabase.table('tasks').select('id', count='exact').eq('user_id', user_id).execute()
-        total_tasks_count = response_total.count
-        if total_tasks_count == 0:
-            message = "You haven't created any tasks yet"
-        elif total_tasks_count == completed_tasks_count:
-            message = "Yay! You have completed all your tasks"
-        else:
-            message = None
+        # response = supabase.table('tasks').select('id', count='exact').eq('user_id', user_id).eq('task_status', 0).execute()
+        # pending_tasks_count = response.count
+        # response_completed = supabase.table('tasks').select('id', count='exact').eq('user_id', user_id).eq('task_status', 1).execute()
+        # completed_tasks_count = response_completed.count
+        # response_total = supabase.table('tasks').select('id', count='exact').eq('user_id', user_id).execute()
+        # total_tasks_count = response_total.count
+        # if total_tasks_count == 0:
+        #     message = "You haven't created any tasks yet"
+        # elif total_tasks_count == completed_tasks_count:
+        #     message = "Yay! You have completed all your tasks"
+        # else:
+        #     message = None
         
-        if total_tasks_count > 0:
-            percentc = round((completed_tasks_count / total_tasks_count) * 100)
-        else:
-            percentc = 0
-        return render_template('welcome.html',pending_tasks_count=pending_tasks_count, percentc=percentc, message=message)
+        # if total_tasks_count > 0:
+        #     percentc = round((completed_tasks_count / total_tasks_count) * 100)
+        # else:
+        #     percentc = 0
+        return render_template('welcome.html')#),pending_tasks_count=pending_tasks_count, percentc=percentc, message=message)
     else:
         return redirect('/index')
 
