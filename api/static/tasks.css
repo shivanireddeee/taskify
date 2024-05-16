@@ -76,7 +76,12 @@ th {
     background-color: #8b6239; /* Dark brown background for table headers */
     color: white; /* White text color for table headers */
 }
-
+thead,th{
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 .btnn {
     font-size: 15px;
     display: inline-block;
