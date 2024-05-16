@@ -83,6 +83,9 @@
                 padding:1px;
             }
         }
+        #updateModal{
+            min-height:200px;
+        }
     </style>
 </head>
 <body>
@@ -110,22 +113,20 @@
                         <form id="updateForm" action="/update" method="post">
                             <input type="hidden" id="updateId" name="updateId">
                             <label for="updateNameInput">New Task Name:</label>
-                            <input type="text" id="updateNameInput" name="name" placeholder="New Task Name" autocomplete="off">
+                            <input type="text" id="updateNameInput" name="name" placeholder="New Task Name" autocomplete="off" required>
                             <br><br>
                             <label for="updateStartTimeInput">New Start Time:</label>
                             <input type="datetime-local" id="updateStartTimeInput" name="start_time" required>
                             <br><br>
                             <label for="updateEndTimeInput">New End Time:</label>
                             <input type="datetime-local" id="updateEndTimeInput" name="end_time" required>
-                        </form>
                     </div>
                     <!-- Modal Footer -->
                     <div class="modal-footer">
-                        <button type="button" class="cancel" onclick="closeModal()">Cancel</button>
-                            <form id="updateForm" action="/update" method="post">
-                                <button type="submit" class="btn btn-success save">Save Changes</button>
-                            </form>
+                        <button type="button" class="cancel" onclick="closeModal()">Cancel</button>                         
+                        <button type="submit" class="btn btn-success save">Save Changes</button>                
                     </div>
+                </form>
                 </div>
             </div>
         </div>
