@@ -64,7 +64,7 @@ input[type="submit"]:hover {
 }
 
 .alert {
-    color: red !important; 
+    color: rgb(14, 187, 14) !important; 
     font-size: 17px;
 }
 form h2 {
